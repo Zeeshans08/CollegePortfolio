@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Events | Smt. K.G. Mittal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="College Logo" class="logo">
+            <div class="header-text">
+                <h1>Smt. K.G. Mittal Institute</h1>
+                <p>Department of Information Technology & Computer Science</p>
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="academic.html">Academics</a></li>
+                <li><a href="event.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+        <!-- Same header as index.html -->
+    </header>
+
+    <main>
+        <section class="events-hero">
+            <h1>Department Events</h1>
+            <p>Capturing our academic journey and memorable moments</p>
+        </section>
+
+        <section class="gallery-controls">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Events</button>
+                <button class="filter-btn" data-filter="workshop">Workshops</button>
+                <button class="filter-btn" data-filter="seminar">Seminars</button>
+                <button class="filter-btn" data-filter="fest">Fests</button>
+                <button class="filter-btn" data-filter="other">Others</button>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Search events...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </section>
+
+        <section class="gallery-container">
+            <div class="gallery-grid" id="lightgallery">
+                <!-- Event 1 -->
+                <a href="images/events/event1.jpg" class="gallery-item" data-src="images/events/event1.jpg" data-sub-html="<h4>Tech Fest 2024</h4><p>Annual technical festival</p>">
+                    <img src="images/events/event1-thumb.jpg" alt="Tech Fest">
+                    <div class="gallery-overlay">
+                        <h3>Tech Fest 2024</h3>
+                        <p>Click to view</p>
+                    </div>
+                </a>
+                
+                <!-- Add more events following the same pattern -->
+                <!-- At least 20-30 items for a good gallery -->
+            </div>
+        </section>
+
+        <section class="upcoming-events">
+            <h2>Upcoming Events</h2>
+            <div class="events-list">
+                <!-- JavaScript will populate this -->
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="academic.html">Academics</a></li>
+                    <li><a href="event.html">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> College Address Here</p>
+                <p><i class="fas fa-phone"></i> +91 XXXXX XXXXX</p>
+                <p><i class="fas fa-envelope"></i> it-dept@kgmittal.edu</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Smt. K.G. Mittal Institute. All rights reserved.</p>
+            <p>Developed by Department of IT & CS</p>
+        </div>
+    </footer>
+
+    <!-- Lightgallery JS for image gallery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize lightGallery
+        lightGallery(document.getElementById('lightgallery'), {
+            selector: '.gallery-item',
+            download: false,
+            counter: false
+        });
+    </script>
+</body>
+</html>
