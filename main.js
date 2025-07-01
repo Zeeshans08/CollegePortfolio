@@ -262,3 +262,35 @@ document.addEventListener('DOMContentLoaded', function() {
   showImage('muqabla', 0);
   showImage('mukaam', 0);
 });
+// Add touch event support
+function setupTouchEvents(galleryId) {
+  const viewer = document.getElementById(`${galleryId}-viewer`);
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  viewer.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, {passive: true});
+
+  viewer.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe(galleryId);
+  }, {passive: true});
+}
+
+function handleSwipe(galleryId) {
+  const swipeThreshold = 50;
+  if (touchStartX - touchEndX > swipeThreshold) {
+    nextImage(galleryId);
+  } else if (touchEndX - touchStartX > swipeThreshold) {
+    prevImage(galleryId);
+  }
+}
+
+// Initialize touch for both galleries
+document.addEventListener('DOMContentLoaded', function() {
+  showImage('muqabla', 0);
+  showImage('mukaam', 0);
+  setupTouchEvents('muqabla');
+  setupTouchEvents('mukaam');
+});
