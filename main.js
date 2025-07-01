@@ -294,3 +294,9 @@ document.addEventListener('DOMContentLoaded', function() {
   setupTouchEvents('muqabla');
   setupTouchEvents('mukaam');
 });
+// Update your image loading
+const lazyImages = document.querySelectorAll('img[data-src]');
+lazyImages.forEach(img => {
+  img.src = img.dataset.src;
+  img.onload = () => img.classList.add('loaded');
+});
