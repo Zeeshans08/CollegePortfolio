@@ -225,3 +225,40 @@ document.addEventListener('DOMContentLoaded', function() {
     el.style.opacity = '0'; // Ensure elements start hidden
   });
 });
+// Image slider functionality
+function showImage(galleryId, index) {
+  const viewer = document.getElementById(`${galleryId}-viewer`);
+  const images = viewer.querySelectorAll('img');
+  const counter = document.getElementById(`${galleryId}-counter`);
+  
+  // Hide all images
+  images.forEach(img => img.classList.remove('active'));
+  
+  // Show selected image
+  images[index].classList.add('active');
+  counter.textContent = index + 1;
+}
+
+function nextImage(galleryId) {
+  const viewer = document.getElementById(`${galleryId}-viewer`);
+  const images = viewer.querySelectorAll('img');
+  let currentIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+  
+  currentIndex = (currentIndex + 1) % images.length;
+  showImage(galleryId, currentIndex);
+}
+
+function prevImage(galleryId) {
+  const viewer = document.getElementById(`${galleryId}-viewer`);
+  const images = viewer.querySelectorAll('img');
+  let currentIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+  
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  showImage(galleryId, currentIndex);
+}
+
+// Initialize first image for each gallery
+document.addEventListener('DOMContentLoaded', function() {
+  showImage('muqabla', 0);
+  showImage('mukaam', 0);
+});
