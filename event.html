@@ -54,28 +54,52 @@
             </div>
         </section>
 
-        <section class="gallery-container">
-            <div class="gallery-grid" id="lightgallery">
-                <!-- Event 1 -->
-                <a href="images/events/event1.jpg" class="gallery-item" data-src="images/events/event1.jpg" data-sub-html="<h4>Tech Fest 2024</h4><p>Annual technical festival</p>">
-                    <img src="images/events/event1-thumb.jpg" alt="Tech Fest">
-                    <div class="gallery-overlay">
-                        <h3>Tech Fest 2024</h3>
-                        <p>Click to view</p>
-                    </div>
-                </a>
-                
-                <!-- Add more events following the same pattern -->
-                <!-- At least 20-30 items for a good gallery -->
-            </div>
-        </section>
+        <section class="event-gallery">
+  <!-- Muqabla Section -->
+  <div class="event-section">
+    <h2 class="event-title">Muqabla 2024</h2>
+    <div class="gallery-container">
+      <button class="arrow-btn left-arrow" onclick="prevImage('muqabla')">❮</button>
+      <div class="image-viewer" id="muqabla-viewer">
+        <img src="images/muqabla/1.jpg" alt="Muqabla Event Photo 1" class="active">
+        <img src="images/muqabla/2.jpg" alt="Muqabla Event Photo 2">
+        <!-- Add all 12 images -->
+        <img src="images/muqabla/12.jpg" alt="Muqabla Event Photo 12">
+      </div>
+      <button class="arrow-btn right-arrow" onclick="nextImage('muqabla')">❯</button>
+    </div>
+    <div class="image-counter">
+      <span id="muqabla-counter">1</span>/12
+    </div>
+  </div>
 
-        <section class="upcoming-events">
-            <h2>Upcoming Events</h2>
-            <div class="events-list">
-                <!-- JavaScript will populate this -->
-            </div>
-        </section>
+  <!-- Mukaam Section -->
+  <div class="event-section">
+    <h2 class="event-title">Mukaam 2024</h2>
+    <div class="gallery-container">
+      <button class="arrow-btn left-arrow" onclick="prevImage('mukaam')">❮</button>
+      <div class="image-viewer" id="mukaam-viewer">
+        <img src="1.jpg" alt="Mukaam Event Photo 1" class="active">
+        <img src="2.jpg" alt="Mukaam Event Photo 2">
+         <img src="3.jpg" alt="Mukaam Event Photo 3">
+          <img src="4.jpg" alt="Mukaam Event Photo 4">
+           <img src="5.jpg" alt="Mukaam Event Photo 5">
+            <img src="6.jpg" alt="Mukaam Event Photo 6">
+             <img src="7.jpg" alt="Mukaam Event Photo 7">
+             <img src="8.jpg" alt="Mukaam Event Photo 8">
+              <img src="9.jpg" alt="Mukaam Event Photo 9">
+               <img src="10.jpg" alt="Mukaam Event Photo 10">
+        <!-- Add all Mukaam images similarly -->
+      </div>
+      <button class="arrow-btn right-arrow" onclick="nextImage('mukaam')">❯</button>
+    </div>
+    <div class="image-counter">
+      <span id="mukaam-counter">1</span>/X <!-- Replace X with actual count -->
+    </div>
+  </div>
+</section>
+
+    
     </main>
 
     <footer id="contact">
