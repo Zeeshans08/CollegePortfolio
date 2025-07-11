@@ -168,12 +168,74 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
     <script src="main.js"></script>
     <script>
-        // Initialize lightGallery
-        lightGallery(document.getElementById('lightgallery'), {
-            selector: '.gallery-item',
-            download: false,
-            counter: false
-        });
+        <script>
+// Image gallery functionality
+function nextImage(galleryId) {
+    const viewer = document.getElementById(`${galleryId}-viewer`);
+    const images = viewer.querySelectorAll('img');
+    const counter = document.getElementById(`${galleryId}-counter`);
+    let currentIndex = 0;
+    
+    // Find current active image
+    images.forEach((img, index) => {
+        if (img.classList.contains('active')) {
+            currentIndex = index;
+            img.classList.remove('active');
+        }
+    });
+    
+    // Calculate next index
+    const nextIndex = (currentIndex + 1) % images.length;
+    images[nextIndex].classList.add('active');
+    counter.textContent = nextIndex + 1;
+}
+
+function prevImage(galleryId) {
+    const viewer = document.getElementById(`${galleryId}-viewer`);
+    const images = viewer.querySelectorAll('img');
+    const counter = document.getElementById(`${galleryId}-counter`);
+    let currentIndex = 0;
+    
+    // Find current active image
+    images.forEach((img, index) => {
+        if (img.classList.contains('active')) {
+            currentIndex = index;
+            img.classList.remove('active');
+        }
+    });
+    
+    // Calculate previous index
+    const prevIndex = (currentIndex - 1 + images.length) % images.length;
+    images[prevIndex].classList.add('active');
+    counter.textContent = prevIndex + 1;
+}
+
+// Initialize all galleries
+document.addEventListener('DOMContentLoaded', function() {
+    // Set up all galleries
+    const galleries = ['mukaam', 'muqabla', 'yoga'];
+    
+    galleries.forEach(galleryId => {
+        const viewer = document.getElementById(`${galleryId}-viewer`);
+        if (viewer) {
+            const images = viewer.querySelectorAll('img');
+            if (images.length > 0) {
+                // Ensure only first image is active initially
+                images.forEach((img, index) => {
+                    img.classList.remove('active');
+                    if (index === 0) img.classList.add('active');
+                });
+                
+                // Update counter
+                const counter = document.getElementById(`${galleryId}-counter`);
+                if (counter) {
+                    counter.textContent = `1/${images.length}`;
+                }
+            }
+        }
+    });
+});
+</script>
     </script>
 </body>
 </html>
