@@ -1536,3 +1536,118 @@ footer {
         pointer-events: all;
     }
 }
+/* Event Gallery Specific Styles */
+.event-gallery {
+    padding: 2rem 0;
+}
+
+.event-section {
+    margin-bottom: 4rem;
+}
+
+.event-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    position: relative;
+}
+
+.event-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #3498db;
+    margin: 0.5rem auto 0;
+}
+
+.gallery-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    padding: 0 2rem;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--secondary);
+    color: white;
+    border-color: var(--secondary);
+}
+
+.search-box {
+    display: flex;
+}
+
+.search-box input {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 30px 0 0 30px;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.search-box button {
+    padding: 0 1.2rem;
+    background: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .gallery-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .search-box {
+        width: 100%;
+    }
+    
+    .image-viewer {
+        height: 350px;
+    }
+    
+    .arrow-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .event-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-buttons {
+        justify-content: center;
+    }
+    
+    .image-viewer {
+        height: 250px;
+    }
+}
