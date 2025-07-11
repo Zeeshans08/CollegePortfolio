@@ -550,9 +550,16 @@ footer {
 
 .event-img img {
     width: 100%;
-    height: 100%;
+    height: 250%;
     object-fit: cover;
-    transition: transform 0.5s;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+.event-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
 
 .event-card:hover .event-img img {
