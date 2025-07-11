@@ -6,7 +6,89 @@
     <title>Department Events | Smt. K.G. Mittal</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css">
+    <style>
+        /* Additional Gallery Styles */
+        .gallery-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .image-viewer {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            height: 500px;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .image-viewer img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .image-viewer img.active {
+            opacity: 1;
+        }
+        
+        .arrow-btn {
+            background: rgba(52, 152, 219, 0.7);
+            color: white;
+            border: none;
+            font-size: 2rem;
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 10;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .arrow-btn:hover {
+            background: rgba(41, 128, 185, 0.9);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .left-arrow {
+            left: 20px;
+        }
+        
+        .right-arrow {
+            right: 20px;
+        }
+        
+        .image-counter {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+        
+        @media (max-width: 768px) {
+            .image-viewer {
+                height: 350px;
+            }
+            
+            .arrow-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -19,10 +101,10 @@
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html" class="">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="academic.html">Academics</a></li>
-                <li><a href="event.html">Events</a></li>
+                <li><a href="event.html" class="active">Events</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="burger">
@@ -31,7 +113,6 @@
                 <div class="line3"></div>
             </div>
         </nav>
-        <!-- Same header as index.html -->
     </header>
 
     <main>
@@ -54,79 +135,83 @@
             </div>
         </section>
 
-        <!-- PASTE THIS NEW SECTION -->
-<section class="event-gallery">
-  <!-- Mukaam Section -->
-  <div class="event-section">
-    <h2 class="event-title">Mukaam 2024</h2>
-    <div class="gallery-container">
-      <button class="arrow-btn left-arrow" onclick="prevImage"('mukaam')>❮</button>
-      <div class="image-viewer" id="mukaam-viewer">
-        <img src="images/muqabla/1.jpg" alt="Muqabla Event Photo 1" class="active">
-        <img src="images/muqabla/2.jpg" alt="Muqabla Event Photo 2">
-        <!-- Add all 12 images -->
-        <img src="images/muqabla/12.jpg" alt="Muqabla Event Photo 12">
-      </div>
-      <button class="arrow-btn right-arrow" onclick="nextImage"('mukaam')>❯</button>
-    </div>
-    <div class="image-counter">
-      <span id="mukaam-counter">1</span>/12
-    </div>
-  </div>
+        <section class="event-gallery">
+            <!-- Mukaam Section -->
+            <div class="event-section">
+                <h2 class="event-title">Mukaam 2024</h2>
+                <div class="gallery-container">
+                    <button class="arrow-btn left-arrow" onclick="prevImage('mukaam')">❮</button>
+                    <div class="image-viewer" id="mukaam-viewer">
+                        <img src="images/muqabla/1.jpg" alt="Mukaam Event Photo 1" class="active">
+                        <img src="images/muqabla/2.jpg" alt="Mukaam Event Photo 2">
+                        <img src="images/muqabla/3.jpg" alt="Mukaam Event Photo 3">
+                        <img src="images/muqabla/4.jpg" alt="Mukaam Event Photo 4">
+                        <img src="images/muqabla/5.jpg" alt="Mukaam Event Photo 5">
+                        <img src="images/muqabla/6.jpg" alt="Mukaam Event Photo 6">
+                        <img src="images/muqabla/7.jpg" alt="Mukaam Event Photo 7">
+                        <img src="images/muqabla/8.jpg" alt="Mukaam Event Photo 8">
+                        <img src="images/muqabla/9.jpg" alt="Mukaam Event Photo 9">
+                        <img src="images/muqabla/10.jpg" alt="Mukaam Event Photo 10">
+                        <img src="images/muqabla/11.jpg" alt="Mukaam Event Photo 11">
+                        <img src="images/muqabla/12.jpg" alt="Mukaam Event Photo 12">
+                    </div>
+                    <button class="arrow-btn right-arrow" onclick="nextImage('mukaam')">❯</button>
+                </div>
+                <div class="image-counter">
+                    <span id="mukaam-counter">1</span>/12
+                </div>
+            </div>
 
-  <!-- Muqabla Section -->
-  <div class="event-section">
-    <h2 class="event-title">Muqabla 2024</h2>
-    <div class="gallery-container">
-      <button class="arrow-btn left-arrow" onclick="prevImage('muqabla')">❮</button>
-      <div class="image-viewer" id="muqabla-viewer">
-        <img src="1.jpg" alt="Mukaam Event Photo 1" class="active">
-        <img src="2.jpg" alt="Mukaam Event Photo 2">
-         <img src="3.jpg" alt="Mukaam Event Photo 3">
-          <img src="4.jpg" alt="Mukaam Event Photo 4">
-           <img src="5.jpg" alt="Mukaam Event Photo 5">
-            <img src="6.jpg" alt="Mukaam Event Photo 6">
-             <img src="7.jpg" alt="Mukaam Event Photo 7">
-             <img src="8.jpg" alt="Mukaam Event Photo 8">
-              <img src="9.jpg" alt="Mukaam Event Photo 9">
-               <img src="10.jpg" alt="Mukaam Event Photo 10">
-          <style>
-    .event-img {
-        width: 100% !important;
-        height: 250px !important;
-        object-fit: cover !important;
-    }
-</style>
-        <!-- Add all Mukaam images similarly -->
-      </div>
-      <button class="arrow-btn right-arrow" onclick="nextImage('muqabla')">❯</button>
-    </div>
-    <div class="image-counter">
-      <span id="muqabla-counter">1</span>/X <!-- Replace X with actual count -->
-    </div>
-  </div>
-    <!-- Yoga Section -->
-  <div class="event-section">
-    <h2 class="event-title">Yoga 2024</h2>
-    <div class="gallery-container">
-      <button class="arrow-btn left-arrow" onclick="prevImage"('yoga')>❮</button>
-      <div class="image-viewer" id="yoga-viewer">
-        <img src="Y1.jpeg" alt="Yoga Event Photo 1" class="active">
-        <img src="Y2.jpeg" alt="Yoga Event Photo 2">
-          <img src="Y3.jpeg" alt="Yoga Event Photo 3">
-          <img src="Y4.jpeg" alt="Yoga Event Photo 4">
-          <img src="Y5.jpeg" alt="Yoga Event Photo 5">
-        <!-- Add all 12 images -->
-        <img src="Y12.jpeg" alt="Yoga Event Photo 12">
-      </div>
-      <button class="arrow-btn right-arrow" onclick="nextImage"('yoga')>❯</button>
-    </div>
-    <div class="image-counter">
-      <span id="yoga-counter">1</span>/12
-    </div>
-  </div>
-</section>
-       
+            <!-- Muqabla Section -->
+            <div class="event-section">
+                <h2 class="event-title">Muqabla 2024</h2>
+                <div class="gallery-container">
+                    <button class="arrow-btn left-arrow" onclick="prevImage('muqabla')">❮</button>
+                    <div class="image-viewer" id="muqabla-viewer">
+                        <img src="1.jpg" alt="Muqabla Event Photo 1" class="active">
+                        <img src="2.jpg" alt="Muqabla Event Photo 2">
+                        <img src="3.jpg" alt="Muqabla Event Photo 3">
+                        <img src="4.jpg" alt="Muqabla Event Photo 4">
+                        <img src="5.jpg" alt="Muqabla Event Photo 5">
+                        <img src="6.jpg" alt="Muqabla Event Photo 6">
+                        <img src="7.jpg" alt="Muqabla Event Photo 7">
+                        <img src="8.jpg" alt="Muqabla Event Photo 8">
+                        <img src="9.jpg" alt="Muqabla Event Photo 9">
+                        <img src="10.jpg" alt="Muqabla Event Photo 10">
+                    </div>
+                    <button class="arrow-btn right-arrow" onclick="nextImage('muqabla')">❯</button>
+                </div>
+                <div class="image-counter">
+                    <span id="muqabla-counter">1</span>/10
+                </div>
+            </div>
+
+            <!-- Yoga Section -->
+            <div class="event-section">
+                <h2 class="event-title">Yoga 2024</h2>
+                <div class="gallery-container">
+                    <button class="arrow-btn left-arrow" onclick="prevImage('yoga')">❮</button>
+                    <div class="image-viewer" id="yoga-viewer">
+                        <img src="Y1.jpeg" alt="Yoga Event Photo 1" class="active">
+                        <img src="Y2.jpeg" alt="Yoga Event Photo 2">
+                        <img src="Y3.jpeg" alt="Yoga Event Photo 3">
+                        <img src="Y4.jpeg" alt="Yoga Event Photo 4">
+                        <img src="Y5.jpeg" alt="Yoga Event Photo 5">
+                        <img src="Y6.jpeg" alt="Yoga Event Photo 6">
+                        <img src="Y7.jpeg" alt="Yoga Event Photo 7">
+                        <img src="Y8.jpeg" alt="Yoga Event Photo 8">
+                        <img src="Y9.jpeg" alt="Yoga Event Photo 9">
+                        <img src="Y10.jpeg" alt="Yoga Event Photo 10">
+                        <img src="Y11.jpeg" alt="Yoga Event Photo 11">
+                        <img src="Y12.jpeg" alt="Yoga Event Photo 12">
+                    </div>
+                    <button class="arrow-btn right-arrow" onclick="nextImage('yoga')">❯</button>
+                </div>
+                <div class="image-counter">
+                    <span id="yoga-counter">1</span>/12
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer id="contact">
@@ -142,16 +227,14 @@
             </div>
             <div class="footer-section">
                 <h3>Contact Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i>Nahar Nagar, MITTAL College Nahar Nagar. Off to Liberty Garden Malad(W) Pin:-400064. India
-</p>
-                <p><i class="fas fa-phone"></i> +91 9136168847/7718089066
-</p>
-                <p><i class="fas fa-envelope"></i>enquiry@kgmittalcollege.edu.in </p>
+                <p><i class="fas fa-map-marker-alt"></i>Nahar Nagar, MITTAL College Nahar Nagar. Off to Liberty Garden Malad(W) Pin:-400064. India</p>
+                <p><i class="fas fa-phone"></i> +91 9136168847/7718089066</p>
+                <p><i class="fas fa-envelope"></i>enquiry@kgmittalcollege.edu.in</p>
             </div>
             <div class="footer-section">
                 <h3>Follow Us</h3>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a
+                    <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -164,78 +247,82 @@
         </div>
     </footer>
 
-    <!-- Lightgallery JS for image gallery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
-    <script src="main.js"></script>
     <script>
-        <script>
-// Image gallery functionality
-function nextImage(galleryId) {
-    const viewer = document.getElementById(`${galleryId}-viewer`);
-    const images = viewer.querySelectorAll('img');
-    const counter = document.getElementById(`${galleryId}-counter`);
-    let currentIndex = 0;
-    
-    // Find current active image
-    images.forEach((img, index) => {
-        if (img.classList.contains('active')) {
-            currentIndex = index;
-            img.classList.remove('active');
-        }
-    });
-    
-    // Calculate next index
-    const nextIndex = (currentIndex + 1) % images.length;
-    images[nextIndex].classList.add('active');
-    counter.textContent = nextIndex + 1;
-}
-
-function prevImage(galleryId) {
-    const viewer = document.getElementById(`${galleryId}-viewer`);
-    const images = viewer.querySelectorAll('img');
-    const counter = document.getElementById(`${galleryId}-counter`);
-    let currentIndex = 0;
-    
-    // Find current active image
-    images.forEach((img, index) => {
-        if (img.classList.contains('active')) {
-            currentIndex = index;
-            img.classList.remove('active');
-        }
-    });
-    
-    // Calculate previous index
-    const prevIndex = (currentIndex - 1 + images.length) % images.length;
-    images[prevIndex].classList.add('active');
-    counter.textContent = prevIndex + 1;
-}
-
-// Initialize all galleries
-document.addEventListener('DOMContentLoaded', function() {
-    // Set up all galleries
-    const galleries = ['mukaam', 'muqabla', 'yoga'];
-    
-    galleries.forEach(galleryId => {
-        const viewer = document.getElementById(`${galleryId}-viewer`);
-        if (viewer) {
+        // Image gallery functionality
+        function nextImage(galleryId) {
+            const viewer = document.getElementById(`${galleryId}-viewer`);
             const images = viewer.querySelectorAll('img');
-            if (images.length > 0) {
-                // Ensure only first image is active initially
-                images.forEach((img, index) => {
+            const counter = document.getElementById(`${galleryId}-counter`);
+            let currentIndex = 0;
+            
+            // Find current active image
+            images.forEach((img, index) => {
+                if (img.classList.contains('active')) {
+                    currentIndex = index;
                     img.classList.remove('active');
-                    if (index === 0) img.classList.add('active');
-                });
-                
-                // Update counter
-                const counter = document.getElementById(`${galleryId}-counter`);
-                if (counter) {
-                    counter.textContent = `1/${images.length}`;
                 }
-            }
+            });
+            
+            // Calculate next index
+            const nextIndex = (currentIndex + 1) % images.length;
+            images[nextIndex].classList.add('active');
+            counter.textContent = nextIndex + 1;
         }
-    });
-});
-</script>
+
+        function prevImage(galleryId) {
+            const viewer = document.getElementById(`${galleryId}-viewer`);
+            const images = viewer.querySelectorAll('img');
+            const counter = document.getElementById(`${galleryId}-counter`);
+            let currentIndex = 0;
+            
+            // Find current active image
+            images.forEach((img, index) => {
+                if (img.classList.contains('active')) {
+                    currentIndex = index;
+                    img.classList.remove('active');
+                }
+            });
+            
+            // Calculate previous index
+            const prevIndex = (currentIndex - 1 + images.length) % images.length;
+            images[prevIndex].classList.add('active');
+            counter.textContent = prevIndex + 1;
+        }
+
+        // Initialize all galleries
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set up all galleries
+            const galleries = ['mukaam', 'muqabla', 'yoga'];
+            
+            galleries.forEach(galleryId => {
+                const viewer = document.getElementById(`${galleryId}-viewer`);
+                if (viewer) {
+                    const images = viewer.querySelectorAll('img');
+                    if (images.length > 0) {
+                        // Ensure only first image is active initially
+                        images.forEach((img, index) => {
+                            img.classList.remove('active');
+                            if (index === 0) img.classList.add('active');
+                        });
+                        
+                        // Update counter
+                        const counter = document.getElementById(`${galleryId}-counter`);
+                        if (counter) {
+                            counter.textContent = `1/${images.length}`;
+                        }
+                    }
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            burger.classList.toggle('toggle');
+        });
     </script>
 </body>
 </html>
