@@ -1688,3 +1688,32 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* Academics Cards */
+.program-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+}
+
+.program-card h3 {
+  color: #6e48aa;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.program-card ul {
+  list-style-type: none;
+}
+
+.program-card li::before {
+  content: "▹";
+  color: #9d50bb;
+  margin-right: 10px;
+}
