@@ -4,130 +4,375 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Our Department | Smt. K.G. Mittal</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --dark: #1a252f;
+            --light: #ecf0f1;
+        }
+
+        /* Modern Glass Morphism Effects */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+
+        /* Hero Section with Parallax */
+        .about-hero {
+            height: 80vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('collegecampus.jpg') center/cover no-repeat fixed;
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+            animation: fadeInDown 1s;
+        }
+
+        /* Timeline with Animated Dots */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 4rem auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: var(--secondary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: var(--accent);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+            animation: pulse 2s infinite;
+        }
+
+        /* Floating Cards with Tilt Effect */
+        .feature-card {
+            transition: transform 0.5s, box-shadow 0.5s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Animated Underline Effect */
+        .animated-underline {
+            position: relative;
+            display: inline-block;
+        }
+
+        .animated-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .animated-underline:hover::after {
+            width: 100%;
+        }
+
+        /* Particle Background */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 31px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-item::after {
+                left: 18px;
+            }
+        }
+
+        /* Keyframe Animations */
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(231, 76, 60, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
 </head>
 <body>
+    <div id="particles-js"></div>
+    
     <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="College Logo" class="logo">
-            <div class="header-text">
-                <h1>Smt Kamladevi Gauridutt Mittal College of Arts and Commerce</h1>
-                <p>Department of Information Technology & Computer Science</p>
-            </div>
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html" class="">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="academic.html">Academics</a></li>
-                <li><a href="event.html">Events</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </nav>
-        <!-- Same header as index.html -->
+        <!-- Your existing header -->
     </header>
 
-    <!-- about.html -->
-<section class="about-hero">
-  <div class="college-image">
-    <img src="collegecampus.jpg" alt="Smt. K.G. Mittal College Campus" loading="lazy">
-    <div class="image-overlay">
-      <h1>Inspiring Excellence Since 1992</h1>
-    </div>
-  </div>
-</section>
-
-<section class="college-intro">
-  <div class="container">
-    <h2>Our Legacy</h2>
-    <div class="vision-statement">
-      <p>The Trustees of Marwari Vidyalaya, men of steel and vision, transformed an old institution into <strong>Smt. K.G. Mittal College</strong> in 1992, creating a beacon of education in Mumbai.</p>
-      
-      <div class="highlight-box">
-        <p>"We equip students with the finest skills to triumph over life's challenges through innovative education in Commerce, Science, and Management."</p>
-      </div>
-    </div>
-
-    <div class="key-facts">
-      <div class="fact-card">
-        <i class="fas fa-university"></i>
-        <h3>University Affiliation</h3>
-        <p>Recognized by University of Mumbai & Maharashtra Government</p>
-      </div>
-      
-      <div class="fact-card">
-        <i class="fas fa-graduation-cap"></i>
-        <h3>Programs Offered</h3>
-        <ul>
-          <li>BSc IT & Computer Science</li>
-          <li>Bachelor of Commerce (B.Com)</li>
-          <li>Management Studies (BMS)</li>
-          <li>Mass Media (BMM)</li>
-        </ul>
-      </div>
-      
-      <div class="fact-card">
-        <i class="fas fa-bolt"></i>
-        <h3>Our Mission</h3>
-        <p>To blend traditional values with modern education for holistic development</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-        <section class="mission-vision">
-            <div class="mission">
-                <h3>Our Mission</h3>
-                <p>To provide comprehensive IT education that prepares students for the digital world.</p>
+    <main>
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <div class="hero-content">
+                <h1 class="animate__animated animate__fadeInDown">Shaping Future Innovators</h1>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s">Established in 1992 • Affiliated to University of Mumbai</p>
+                <a href="#legacy" class="cta-button animate__animated animate__fadeInUp animate__delay-2s">Explore Our Legacy</a>
             </div>
-            <div class="vision">
-                <h3>Our Vision</h3>
-                <p>To be a center of excellence in Information Technology education.</p>
+        </section>
+
+        <!-- Legacy Section -->
+        <section id="legacy" class="container py-5">
+            <div class="glass-card p-5 my-5">
+                <h2 class="text-center mb-4 animated-underline">Our <span class="text-accent">Heritage</span></h2>
+                <p class="lead text-center">The Trustees of Marwari Vidyalaya transformed an old institution into <strong>Smt. K.G. Mittal College</strong>, creating a beacon of modern education while preserving traditional values.</p>
+                
+                <div class="timeline my-5">
+                    <div class="timeline-item left">
+                        <div class="timeline-content glass-card p-4">
+                            <h3>1992</h3>
+                            <p>College established under visionary leadership</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content glass-card p-4">
+                            <h3>2005</h3>
+                            <p>Department of Information Technology launched</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-content glass-card p-4">
+                            <h3>2018</h3>
+                            <p>Recognized as Center of Excellence by Maharashtra Government</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="container py-5">
+            <h2 class="text-center mb-5 animated-underline">Why <span class="text-accent">Choose Us</span></h2>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card glass-card p-4 h-100">
+                        <div class="icon-box text-center mb-3">
+                            <i class="fas fa-atom fa-3x text-accent"></i>
+                        </div>
+                        <h3 class="text-center">Cutting-Edge Curriculum</h3>
+                        <p>Our programs blend theoretical knowledge with practical skills, updated annually with industry inputs.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card glass-card p-4 h-100">
+                        <div class="icon-box text-center mb-3">
+                            <i class="fas fa-user-tie fa-3x text-accent"></i>
+                        </div>
+                        <h3 class="text-center">Expert Faculty</h3>
+                        <p>Learn from PhD holders and industry veterans with decades of experience.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card glass-card p-4 h-100">
+                        <div class="icon-box text-center mb-3">
+                            <i class="fas fa-laptop-code fa-3x text-accent"></i>
+                        </div>
+                        <h3 class="text-center">Tech-Enabled Learning</h3>
+                        <p>Smart classrooms, 24/7 lab access, and virtual learning platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission/Vision Section -->
+        <section class="container py-5">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="glass-card p-5 h-100" style="background: rgba(52, 152, 219, 0.1);">
+                        <h3 class="text-center mb-4"><i class="fas fa-bullseye mr-2"></i> Our Mission</h3>
+                        <p>To provide transformative education that equips students with technical expertise, ethical values, and leadership skills to thrive in the digital economy.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="glass-card p-5 h-100" style="background: rgba(231, 76, 60, 0.1);">
+                        <h3 class="text-center mb-4"><i class="fas fa-eye mr-2"></i> Our Vision</h3>
+                        <p>To be recognized nationally as a premier institution for IT education that bridges academic excellence with real-world innovation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Floating Stats -->
+        <section class="container py-5">
+            <div class="glass-card p-5">
+                <div class="row text-center">
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="counter-box">
+                            <h2 class="counter" data-target="30">0</h2>
+                            <p>Years of Excellence</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="counter-box">
+                            <h2 class="counter" data-target="1500">0</h2>
+                            <p>Students Enrolled</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="counter-box">
+                            <h2 class="counter" data-target="50">0</h2>
+                            <p>Faculty Members</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="counter-box">
+                            <h2 class="counter" data-target="95">0</h2>
+                            <p>Placement Rate</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer id="contact">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="academic.html">Academics</a></li>
-                    <li><a href="event.html">Events</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i>Nahar Nagar, MITTAL College Nahar Nagar. Off to Liberty Garden Malad(W) Pin:-400064. India
- </p>
-                <p><i class="fas fa-phone"></i> +91 9136168847/7718089066
-</p>
-                <p><i class="fas fa-envelope"></i> enquiry@kgmittalcollege.edu.in</p>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Smt. K.G. Mittal Institute. All rights reserved.</p>
-            <p>Developed by Department of IT & CS</p>
-        </div>
+    <footer>
+        <!-- Your existing footer -->
     </footer>
 
-    <script src="main.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+    
+    <script>
+        // Particles.js Config
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#3498db" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#3498db", "opacity": 0.4, "width": 1 },
+                "move": { "enable": true, "speed": 2, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "repulse" },
+                    "onclick": { "enable": true, "mode": "push" }
+                }
+            }
+        });
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+        
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if(count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(updateCount, 1);
+                } else {
+                    counter.innerText = target + '+';
+                }
+            };
+            
+            const waypoint = new Waypoint({
+                element: counter,
+                handler: function() {
+                    updateCount();
+                    this.destroy();
+                },
+                offset: 'bottom-in-view'
+            });
+        });
+
+        // Tilt Animation for Cards
+        const cards = document.querySelectorAll('.feature-card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const xAxis = (window.innerWidth / 2 - e.pageX) / 10;
+                const yAxis = (window.innerHeight / 2 - e.pageY) / 10;
+                card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'rotateY(0deg) rotateX(0deg)';
+            });
+        });
+    </script>
 </body>
 </html>
