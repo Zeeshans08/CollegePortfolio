@@ -3,276 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Our Department | Smt. K.G. Mittal</title>
+    <title>About Us | Smt. K.G. Mittal College</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* Header Styles */
-header {
-    background-color: var(--primary);
-    color: white;
-    padding: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-}
-
-.logo {
-    height: 50px;
-    margin-right: 1rem;
-}
-
-.header-text h1 {
-    font-size: 1.3rem;
-    margin-bottom: 0.2rem;
-}
-
-.header-text p {
-    font-size: 0.8rem;
-    opacity: 0.9;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    transition: all 0.5s ease;
-}
-
-.nav-links li {
-    margin-left: 1.5rem;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-    position: relative;
-    font-size: 0.9rem;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--secondary);
-}
-
-.nav-links a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--secondary);
-}
-
-.burger {
-    display: none;
-    cursor: pointer;
-    z-index: 101;
-}
-
-.burger div {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 5px;
-    transition: all 0.3s ease;
-}
-
-/* Burger menu animation */
-.toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-.toggle .line2 {
-    opacity: 0;
-}
-.toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --dark: #1a252f;
-            --light: #ecf0f1;
+        /* Enhanced CSS for about page */
+        .about-section {
+            padding: 60px 5%;
+            background-color: #fff;
         }
-
-        /* Modern Glass Morphism Effects */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-        }
-
-        /* Hero Section with Parallax */
-        .about-hero {
-            height: 80vh;
+        
+        .about-section h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.2rem;
             position: relative;
-            overflow: hidden;
+        }
+        
+        .about-section h1:after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #3498db;
+            margin: 15px auto;
+        }
+        
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+        
+        .highlight-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .mission-vision {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .mission, .vision {
+            flex: 1;
+            min-width: 300px;
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .mission h3, .vision h3 {
+            color: #3498db;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
         }
-
-        .about-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('collegecampus.jpg') center/cover no-repeat fixed;
-            z-index: -1;
+        
+        .mission h3 i, .vision h3 i {
+            margin-right: 10px;
         }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 2rem;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-            animation: fadeInDown 1s;
-        }
-
-        /* Timeline with Animated Dots */
-        .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 4rem auto;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background: var(--secondary);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-            border-radius: 10px;
-        }
-
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            background: var(--accent);
-            border-radius: 50%;
-            top: 15px;
-            z-index: 1;
-            animation: pulse 2s infinite;
-        }
-
-        /* Floating Cards with Tilt Effect */
-        .feature-card {
-            transition: transform 0.5s, box-shadow 0.5s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px) rotate(2deg);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-
-        /* Animated Underline Effect */
-        .animated-underline {
-            position: relative;
-            display: inline-block;
-        }
-
-        .animated-underline::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            bottom: -5px;
-            left: 0;
-            background: var(--accent);
-            transition: width 0.3s;
-        }
-
-        .animated-underline:hover::after {
-            width: 100%;
-        }
-
-        /* Particle Background */
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 0;
-        }
-
-        /* Responsive Adjustments */
+        
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            .timeline::before {
-                left: 31px;
+            .about-section h1 {
+                font-size: 1.8rem;
             }
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
+            
+            .mission-vision {
+                flex-direction: column;
             }
-            .timeline-item::after {
-                left: 18px;
+            
+            .mission, .vision {
+                min-width: 100%;
             }
-        }
-
-        /* Keyframe Animations */
-        @keyframes pulse {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(231, 76, 60, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
         }
     </style>
 </head>
 <body>
-    <div id="particles-js"></div>
-    
     <header>
-        
         <div class="logo-container">
             <img src="logo.png" alt="College Logo" class="logo">
             <div class="header-text">
@@ -282,8 +103,8 @@ nav {
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html" class="">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
                 <li><a href="academic.html">Academics</a></li>
                 <li><a href="event.html">Events</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -297,202 +118,66 @@ nav {
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="about-hero">
-            <div class="hero-content">
-                <h1 class="animate__animated animate__fadeInDown">Shaping Future Innovators</h1>
-                <p class="animate__animated animate__fadeInUp animate__delay-1s">Established in 1992 • Affiliated to University of Mumbai</p>
-                <a href="#legacy" class="cta-button animate__animated animate__fadeInUp animate__delay-2s">Explore Our Legacy</a>
-            </div>
-        </section>
-
-        <!-- Legacy Section -->
-        <section id="legacy" class="container py-5">
-            <div class="glass-card p-5 my-5">
-                <h2 class="text-center mb-4 animated-underline">Our <span class="text-accent">Heritage</span></h2>
-                <p class="lead text-center">The Trustees of Marwari Vidyalaya transformed an old institution into <strong>Smt. K.G. Mittal College</strong>, creating a beacon of modern education while preserving traditional values.</p>
+        <div class="about-section">
+            <h1>About Us</h1>
+            <div class="about-content">
+                <p>Smt. K.G. Mittal College was established in 1994 with the aim of providing quality education to students from all sections of society. The college is affiliated to the University of Mumbai and is recognized by the Government of Maharashtra.</p>
                 
-                <div class="timeline my-5">
-                    <div class="timeline-item left">
-                        <div class="timeline-content glass-card p-4">
-                            <h3>1992</h3>
-                            <p>College established under visionary leadership</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item right">
-                        <div class="timeline-content glass-card p-4">
-                            <h3>2005</h3>
-                            <p>Department of Information Technology launched</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item left">
-                        <div class="timeline-content glass-card p-4">
-                            <h3>2018</h3>
-                            <p>Recognized as Center of Excellence by Maharashtra Government</p>
-                        </div>
-                    </div>
+                <div class="highlight-box">
+                    <p>The college has excellent infrastructure with well-equipped laboratories, a spacious library, and modern classrooms. We focus on holistic development of students through academics, sports, and cultural activities.</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="container py-5">
-            <h2 class="text-center mb-5 animated-underline">Why <span class="text-accent">Choose Us</span></h2>
-            
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="feature-card glass-card p-4 h-100">
-                        <div class="icon-box text-center mb-3">
-                            <i class="fas fa-atom fa-3x text-accent"></i>
-                        </div>
-                        <h3 class="text-center">Cutting-Edge Curriculum</h3>
-                        <p>Our programs blend theoretical knowledge with practical skills, updated annually with industry inputs.</p>
+                
+                <p>Our faculty members are highly qualified and experienced, dedicated to nurturing the potential of every student. The college provides a conducive environment for learning and personal growth.</p>
+                
+                <div class="mission-vision">
+                    <div class="mission">
+                        <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                        <p>To provide quality education that empowers students with knowledge, skills, and values to succeed in their careers and contribute meaningfully to society.</p>
+                    </div>
+                    <div class="vision">
+                        <h3><i class="fas fa-eye"></i> Our Vision</h3>
+                        <p>To be recognized as a center of excellence in higher education that nurtures innovation, research, and holistic development of students.</p>
                     </div>
                 </div>
                 
-                <div class="col-md-4 mb-4">
-                    <div class="feature-card glass-card p-4 h-100">
-                        <div class="icon-box text-center mb-3">
-                            <i class="fas fa-user-tie fa-3x text-accent"></i>
-                        </div>
-                        <h3 class="text-center">Expert Faculty</h3>
-                        <p>Learn from PhD holders and industry veterans with decades of experience.</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-4 mb-4">
-                    <div class="feature-card glass-card p-4 h-100">
-                        <div class="icon-box text-center mb-3">
-                            <i class="fas fa-laptop-code fa-3x text-accent"></i>
-                        </div>
-                        <h3 class="text-center">Tech-Enabled Learning</h3>
-                        <p>Smart classrooms, 24/7 lab access, and virtual learning platforms.</p>
-                    </div>
-                </div>
+                <p>The college offers undergraduate programs in Science, Commerce, and Management streams. We have excellent placement records with students placed in reputed companies.</p>
             </div>
-        </section>
-
-        <!-- Mission/Vision Section -->
-        <section class="container py-5">
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="glass-card p-5 h-100" style="background: rgba(52, 152, 219, 0.1);">
-                        <h3 class="text-center mb-4"><i class="fas fa-bullseye mr-2"></i> Our Mission</h3>
-                        <p>To provide transformative education that equips students with technical expertise, ethical values, and leadership skills to thrive in the digital economy.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="glass-card p-5 h-100" style="background: rgba(231, 76, 60, 0.1);">
-                        <h3 class="text-center mb-4"><i class="fas fa-eye mr-2"></i> Our Vision</h3>
-                        <p>To be recognized nationally as a premier institution for IT education that bridges academic excellence with real-world innovation.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Floating Stats -->
-        <section class="container py-5">
-            <div class="glass-card p-5">
-                <div class="row text-center">
-                    <div class="col-md-3 col-6 mb-4">
-                        <div class="counter-box">
-                            <h2 class="counter" data-target="30">0</h2>
-                            <p>Years of Excellence</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6 mb-4">
-                        <div class="counter-box">
-                            <h2 class="counter" data-target="1500">0</h2>
-                            <p>Students Enrolled</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6 mb-4">
-                        <div class="counter-box">
-                            <h2 class="counter" data-target="50">0</h2>
-                            <p>Faculty Members</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6 mb-4">
-                        <div class="counter-box">
-                            <h2 class="counter" data-target="95">0</h2>
-                            <p>Placement Rate</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
     </main>
 
-    <footer>
-        <!-- Your existing footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="academic.html">Academics</a></li>
+                    <li><a href="event.html">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Nahar Nagar, MITTAL College, Malad (W), Mumbai - 400064</p>
+                <p><i class="fas fa-phone"></i> +91 9136168847</p>
+                <p><i class="fas fa-envelope"></i> enquiry@kgmittalcollege.edu.in</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Smt. K.G. Mittal College. All rights reserved.</p>
+            <p>Developed by Department of IT & CS</p>
+        </div>
     </footer>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
-    
-    <script>
-        // Particles.js Config
-        particlesJS("particles-js", {
-            "particles": {
-                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#3498db" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.5, "random": true },
-                "size": { "value": 3, "random": true },
-                "line_linked": { "enable": true, "distance": 150, "color": "#3498db", "opacity": 0.4, "width": 1 },
-                "move": { "enable": true, "speed": 2, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": { "enable": true, "mode": "repulse" },
-                    "onclick": { "enable": true, "mode": "push" }
-                }
-            }
-        });
-
-        // Counter Animation
-        const counters = document.querySelectorAll('.counter');
-        const speed = 200;
-        
-        counters.forEach(counter => {
-            const updateCount = () => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                const increment = target / speed;
-                
-                if(count < target) {
-                    counter.innerText = Math.ceil(count + increment);
-                    setTimeout(updateCount, 1);
-                } else {
-                    counter.innerText = target + '+';
-                }
-            };
-            
-            const waypoint = new Waypoint({
-                element: counter,
-                handler: function() {
-                    updateCount();
-                    this.destroy();
-                },
-                offset: 'bottom-in-view'
-            });
-        });
-
-        // Tilt Animation for Cards
-        const cards = document.querySelectorAll('.feature-card');
-        cards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const xAxis = (window.innerWidth / 2 - e.pageX) / 10;
-                const yAxis = (window.innerHeight / 2 - e.pageY) / 10;
-                card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'rotateY(0deg) rotateX(0deg)';
-            });
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
