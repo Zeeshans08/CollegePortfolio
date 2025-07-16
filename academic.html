@@ -5,576 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Programs | Smt. K.G. Mittal College</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* Header Styles */
-header {
-    background-color: var(--primary);
-    color: white;
-    padding: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-}
-
-.logo {
-    height: 50px;
-    margin-right: 1rem;
-}
-
-.header-text h1 {
-    font-size: 1.3rem;
-    margin-bottom: 0.2rem;
-}
-
-.header-text p {
-    font-size: 0.8rem;
-    opacity: 0.9;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    transition: all 0.5s ease;
-}
-
-.nav-links li {
-    margin-left: 1.5rem;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-    position: relative;
-    font-size: 0.9rem;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--secondary);
-}
-
-.nav-links a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--secondary);
-}
-
-.burger {
-    display: none;
-    cursor: pointer;
-    z-index: 101;
-}
-
-.burger div {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 5px;
-    transition: all 0.3s ease;
-}
-
-/* Burger menu animation */
-.toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-.toggle .line2 {
-    opacity: 0;
-}
-.toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --text-color: #333;
-            --text-light: #7f8c8d;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: #f9f9f9;
-        }
-        
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            padding: 15px 5%;
-        }
-        
-        .logo {
-            height: 80px;
-            margin-right: 20px;
-        }
-        
-        .header-text h1 {
-            font-size: 1.4rem;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-        
-        .header-text p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-        
-        nav {
-            background-color: var(--primary-color);
-            padding: 0 5%;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li a {
-            color: white;
-            text-decoration: none;
-            padding: 15px 20px;
-            display: block;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-links li a:hover, .nav-links li a.active {
-            background-color: var(--secondary-color);
-        }
-        
-        .burger {
-            display: none;
-            cursor: pointer;
-        }
-        
-        /* Academics Hero Section */
-        .academics-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/academic-bg.jpg') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-            padding: 100px 5%;
-        }
-        
-        .academics-hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .academics-hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        /* Programs Section */
-        .programs {
+        /* Enhanced CSS for academics page */
+        .academic-section {
             padding: 60px 5%;
-            background-color: white;
+            background-color: #fff;
         }
         
-        .program-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .tab-btn {
-            padding: 12px 25px;
-            background: none;
-            border: none;
-            border-bottom: 3px solid transparent;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-light);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .tab-btn:hover, .tab-btn.active {
-            color: var(--secondary-color);
-            border-bottom: 3px solid var(--secondary-color);
-        }
-        
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .tab-content h2 {
-            color: var(--primary-color);
-            margin-bottom: 30px;
+        .academic-section h1 {
             text-align: center;
-            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+            position: relative;
         }
         
-        .program-details {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
+        .academic-section h1:after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #3498db;
+            margin: 15px auto;
         }
         
-        .program-overview, .curriculum {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .program-overview {
-            background-color: var(--light-color);
+        .program {
+            margin-bottom: 40px;
+            background-color: #f8f9fa;
             padding: 25px;
             border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         
-        .program-overview h3, .curriculum h3 {
-            color: var(--secondary-color);
+        .program h2 {
+            color: #3498db;
             margin-bottom: 15px;
-            font-size: 1.3rem;
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 8px;
+            font-size: 1.5rem;
+        }
+        
+        .program h3 {
+            color: #2c3e50;
+            margin: 20px 0 10px;
+            font-size: 1.2rem;
+        }
+        
+        .program ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .program li {
+            margin-bottom: 8px;
         }
         
         .semester {
-            margin-bottom: 25px;
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 20px;
         }
         
         .semester h4 {
-            color: var(--primary-color);
+            color: #e74c3c;
             margin-bottom: 10px;
         }
         
-        .semester ul {
-            list-style-position: inside;
-            padding-left: 10px;
-        }
-        
-        .semester li {
-            margin-bottom: 5px;
-        }
-        
-        /* Program Cards Section */
-        .program-category {
-            margin-top: 50px;
-        }
-        
-        .program-category h3 {
-            text-align: center;
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin-bottom: 30px;
-        }
-        
-        .program-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-        }
-        
-        .program-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .program-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .program-icon {
-            background-color: var(--secondary-color);
-            color: white;
-            font-size: 2rem;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .program-card h4 {
-            padding: 20px 20px 10px;
-            color: var(--primary-color);
-            font-size: 1.2rem;
-        }
-        
-        .program-details {
-            padding: 0 20px 20px;
-            list-style: none;
-        }
-        
-        .program-details li {
-            margin-bottom: 8px;
-            position: relative;
-            padding-left: 25px;
-        }
-        
-        .program-details li:before {
-            content: "•";
-            color: var(--secondary-color);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-        
-        .specializations {
-            list-style: none;
-            padding-left: 20px;
-            margin-top: 5px;
-        }
-        
-        .specializations li:before {
-            content: "→";
-            color: var(--accent-color);
-        }
-        
-        .syllabus-link {
-            display: block;
-            background-color: var(--accent-color);
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin: 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-        }
-        
-        .syllabus-link:hover {
-            background-color: #c0392b;
-        }
-        
-        /* Placement Section */
-        .placement {
-            padding: 60px 5%;
-            background-color: var(--light-color);
-            text-align: center;
-        }
-        
-        .placement h2 {
-            color: var(--primary-color);
-            margin-bottom: 40px;
-            font-size: 1.8rem;
-        }
-        
-        .stats-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .stat-item {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            min-width: 200px;
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-        }
-        
-        .stat-label {
-            color: var(--text-light);
-            font-weight: 500;
-        }
-        
-        .companies-logos {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .companies-logos img {
-            height: 50px;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: all 0.3s ease;
-        }
-        
-        .companies-logos img:hover {
-            filter: grayscale(0);
-            opacity: 1;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 50px 5% 20px;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-        }
-        
-        .footer-section h3 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-section ul li a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-section ul li a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .footer-section p {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .footer-section i {
-            margin-right: 10px;
-            color: var(--secondary-color);
-            width: 20px;
-            text-align: center;
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-icons a {
-            color: white;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-        
-        .footer-bottom p {
-            margin-bottom: 5px;
-        }
-        
-        /* Responsive Design */
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
+            .academic-section h1 {
+                font-size: 1.8rem;
             }
             
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .burger {
-                display: block;
-                padding: 15px;
-            }
-            
-            .program-tabs {
-                flex-wrap: wrap;
-            }
-            
-            .tab-btn {
-                flex: 1;
-                min-width: 120px;
-                padding: 10px;
-                font-size: 0.9rem;
-            }
-            
-            .academics-hero h1 {
-                font-size: 2rem;
-            }
-            
-            .academics-hero p {
-                font-size: 1rem;
+            .program {
+                padding: 20px 15px;
             }
         }
     </style>
@@ -605,224 +106,87 @@ nav {
     </header>
 
     <main>
-        <section class="academics-hero">
+        <div class="academic-section">
             <h1>Academic Programs</h1>
-            <p>Comprehensive, industry-relevant education to build successful careers in technology and beyond</p>
-        </section>
-
-        <section class="programs">
-            <div class="program-tabs">
-                <button class="tab-btn active" data-tab="bsc-it">BSc Information Technology</button>
-                <button class="tab-btn" data-tab="bsc-cs">BSc Computer Science</button>
-                <button class="tab-btn" data-tab="education">Commerce & Management</button>
-            </div>
-
-            <div class="tab-content active" id="bsc-it">
-                <h2>Bachelor of Science in Information Technology</h2>
-                <div class="program-details">
-                    <div class="program-overview">
-                        <h3>Program Overview</h3>
-                        <p>Our 3-year BSc IT program provides students with comprehensive knowledge of information technology concepts, software development, and system administration. The curriculum is designed to meet industry demands while providing strong theoretical foundations.</p>
-                        <p><strong>Key Features:</strong></p>
-                        <ul>
-                            <li>Industry-aligned curriculum updated regularly</li>
-                            <li>Hands-on training with modern technologies</li>
-                            <li>Industry certifications integrated into coursework</li>
-                            <li>Dedicated placement cell for career support</li>
-                        </ul>
-                    </div>
-                    <div class="curriculum">
-                        <h3>Curriculum Structure</h3>
-                        <div class="semester">
-                            <h4>Semester I</h4>
-                            <ul>
-                                <li>Programming Fundamentals using Python</li>
-                                <li>Discrete Mathematics</li>
-                                <li>Computer Organization and Architecture</li>
-                                <li>Digital Electronics</li>
-                                <li>Communication Skills</li>
-                            </ul>
-                        </div>
-                        <div class="semester">
-                            <h4>Semester II</h4>
-                            <ul>
-                                <li>Data Structures and Algorithms</li>
-                                <li>Database Management Systems</li>
-                                <li>Operating Systems</li>
-                                <li>Computer Networks</li>
-                                <li>Environmental Studies</li>
-                            </ul>
-                        </div>
-                        <div class="semester">
-                            <h4>Semester III</h4>
-                            <ul>
-                                <li>Object Oriented Programming with Java</li>
-                                <li>Web Programming</li>
-                                <li>Software Engineering</li>
-                                <li>Computer Graphics</li>
-                                <li>Numerical Methods</li>
-                            </ul>
-                        </div>
-                    </div>
+            
+            <div class="program">
+                <h2>Bachelor of Science in Information Technology (BSc IT)</h2>
+                <p>3-year undergraduate program focusing on information technology concepts, software development, and system administration.</p>
+                
+                <h3>Program Objectives</h3>
+                <ul>
+                    <li>To provide strong foundation in IT concepts</li>
+                    <li>To develop programming and problem-solving skills</li>
+                    <li>To prepare students for IT industry careers</li>
+                </ul>
+                
+                <h3>Curriculum</h3>
+                <div class="semester">
+                    <h4>Semester I</h4>
+                    <ul>
+                        <li>Programming Fundamentals</li>
+                        <li>Discrete Mathematics</li>
+                        <li>Computer Organization</li>
+                        <li>Digital Electronics</li>
+                    </ul>
+                </div>
+                
+                <div class="semester">
+                    <h4>Semester II</h4>
+                    <ul>
+                        <li>Data Structures</li>
+                        <li>Database Management Systems</li>
+                        <li>Operating Systems</li>
+                        <li>Computer Networks</li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="tab-content" id="bsc-cs">
-                <h2>Bachelor of Science in Computer Science</h2>
-                <div class="program-details">
-                    <div class="program-overview">
-                        <h3>Program Overview</h3>
-                        <p>The BSc Computer Science program offers a rigorous foundation in computer science theory, algorithms, and system design. Students gain expertise in software development, data structures, and computational thinking.</p>
-                        <p><strong>Key Features:</strong></p>
-                        <ul>
-                            <li>Strong emphasis on problem-solving and algorithmic thinking</li>
-                            <li>Advanced coursework in AI and Machine Learning (optional)</li>
-                            <li>Research opportunities with faculty members</li>
-                            <li>Regular hackathons and coding competitions</li>
-                        </ul>
-                    </div>
-                    <div class="curriculum">
-                        <h3>Curriculum Structure</h3>
-                        <div class="semester">
-                            <h4>Semester I</h4>
-                            <ul>
-                                <li>Introduction to Programming (C Language)</li>
-                                <li>Calculus and Linear Algebra</li>
-                                <li>Digital Electronics and Logic Design</li>
-                                <li>Principles of Management</li>
-                                <li>Communication Skills</li>
-                            </ul>
-                        </div>
-                        <div class="semester">
-                            <h4>Semester II</h4>
-                            <ul>
-                                <li>Advanced Data Structures</li>
-                                <li>Computer Organization and Architecture</li>
-                                <li>Discrete Mathematics</li>
-                                <li>Probability and Statistics</li>
-                                <li>Environmental Studies</li>
-                            </ul>
-                        </div>
-                        <div class="semester">
-                            <h4>Semester III</h4>
-                            <ul>
-                                <li>Design and Analysis of Algorithms</li>
-                                <li>Database Management Systems</li>
-                                <li>Operating Systems</li>
-                                <li>Theory of Computation</li>
-                                <li>Computer Networks</li>
-                            </ul>
-                        </div>
-                    </div>
+            
+            <div class="program">
+                <h2>Bachelor of Science in Computer Science (BSc CS)</h2>
+                <p>3-year undergraduate program with focus on computer science theory, algorithms, and system design.</p>
+                
+                <h3>Program Objectives</h3>
+                <ul>
+                    <li>To provide strong foundation in CS fundamentals</li>
+                    <li>To develop algorithmic thinking</li>
+                    <li>To prepare students for software development careers</li>
+                </ul>
+                
+                <h3>Curriculum</h3>
+                <div class="semester">
+                    <h4>Semester I</h4>
+                    <ul>
+                        <li>Introduction to Programming</li>
+                        <li>Calculus</li>
+                        <li>Digital Electronics</li>
+                        <li>Principles of Management</li>
+                    </ul>
+                </div>
+                
+                <div class="semester">
+                    <h4>Semester II</h4>
+                    <ul>
+                        <li>Data Structures</li>
+                        <li>Computer Organization</li>
+                        <li>Discrete Mathematics</li>
+                        <li>Probability and Statistics</li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="tab-content" id="education">
-                <div class="program-category">
-                    <h3>Commerce & Management Programs</h3>
-                    <div class="program-grid">
-                        <!-- Bachelor of Commerce -->
-                        <div class="program-card">
-                            <div class="program-icon">
-                                <i class="fas fa-calculator"></i>
-                            </div>
-                            <h4>Bachelor of Commerce (B.Com)</h4>
-                            <ul class="program-details">
-                                <li><strong>Duration:</strong> 3 Years</li>
-                                <li><strong>Affiliation:</strong> Mumbai University</li>
-                                <li><strong>Specializations:</strong></li>
-                                <ul class="specializations">
-                                    <li>Accountancy & Finance (BAF)</li>
-                                    <li>Business Economics</li>
-                                    <li>Banking & Insurance</li>
-                                </ul>
-                                <li><strong>Eligibility:</strong> 12th Commerce/Arts with minimum 45%</li>
-                                <li><strong>Career Paths:</strong> Chartered Accountancy, MBA, Banking, Financial Analyst</li>
-                            </ul>
-                            <a href="bcom-syllabus.pdf" class="syllabus-link">Download Syllabus</a>
-                        </div>
-
-                        <!-- Bachelor of Management Studies -->
-                        <div class="program-card">
-                            <div class="program-icon">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <h4>Bachelor of Management Studies (BMS)</h4>
-                            <ul class="program-details">
-                                <li><strong>Duration:</strong> 3 Years</li>
-                                <li><strong>Specializations:</strong></li>
-                                <ul class="specializations">
-                                    <li>Marketing Management</li>
-                                    <li>Financial Management</li>
-                                    <li>Human Resource Management</li>
-                                </ul>
-                                <li><strong>Key Features:</strong></li>
-                                <ul class="specializations">
-                                    <li>Industry-relevant case studies</li>
-                                    <li>Management internships</li>
-                                    <li>Entrepreneurship development</li>
-                                </ul>
-                            </ul>
-                            <a href="bms-syllabus.pdf" class="syllabus-link">Download Syllabus</a>
-                        </div>
-
-                        <!-- Bachelor of Mass Media -->
-                        <div class="program-card">
-                            <div class="program-icon">
-                                <i class="fas fa-film"></i>
-                            </div>
-                            <h4>Bachelor of Mass Media (BMM)</h4>
-                            <ul class="program-details">
-                                <li><strong>Duration:</strong> 3 Years</li>
-                                <li><strong>Focus Areas:</strong></li>
-                                <ul class="specializations">
-                                    <li>Journalism (Print & Digital)</li>
-                                    <li>Advertising & PR</li>
-                                    <li>Media Planning</li>
-                                </ul>
-                                <li><strong>Facilities:</strong></li>
-                                <ul class="specializations">
-                                    <li>Media production lab</li>
-                                    <li>Editing suites</li>
-                                    <li>Industry guest lectures</li>
-                                </ul>
-                            </ul>
-                            <a href="bmm-syllabus.pdf" class="syllabus-link">Download Syllabus</a>
-                        </div>
-                    </div>
-                </div>
+            
+            <div class="program">
+                <h2>Bachelor of Commerce (B.Com)</h2>
+                <p>3-year undergraduate program in commerce affiliated to University of Mumbai.</p>
+                
+                <h3>Specializations</h3>
+                <ul>
+                    <li>Accountancy & Finance (BAF)</li>
+                    <li>Business Economics</li>
+                    <li>Banking & Insurance</li>
+                </ul>
             </div>
-        </section>
-
-        <section class="placement">
-            <h2>Placement Highlights</h2>
-            <div class="stats-container">
-                <div class="stat-item">
-                    <div class="stat-number" data-target="92">0</div>
-                    <div class="stat-label">Placement Percentage</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="25">0</div>
-                    <div class="stat-label">Recruiting Partners</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="8.5">0</div>
-                    <div class="stat-label">Highest Package (LPA)</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="4.2">0</div>
-                    <div class="stat-label">Average Package (LPA)</div>
-                </div>
-            </div>
-            <div class="companies-logos">
-                <img src="images/companies/tcs.png" alt="Tata Consultancy Services">
-                <img src="images/companies/infosys.png" alt="Infosys">
-                <img src="images/companies/wipro.png" alt="Wipro">
-                <img src="images/companies/cognizant.png" alt="Cognizant">
-                <img src="images/companies/amazon.png" alt="Amazon">
-                <img src="images/companies/accenture.png" alt="Accenture">
-            </div>
-        </section>
+        </div>
     </main>
 
     <footer id="contact">
@@ -834,106 +198,30 @@ nav {
                     <li><a href="about.html">About</a></li>
                     <li><a href="academic.html">Academics</a></li>
                     <li><a href="event.html">Events</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Contact Information</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Nahar Nagar, MITTAL College, Off. Liberty Garden, Malad (W), Mumbai - 400064, India</p>
-                <p><i class="fas fa-phone"></i> +91 9136168847 / 7718089066</p>
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Nahar Nagar, MITTAL College, Malad (W), Mumbai - 400064</p>
+                <p><i class="fas fa-phone"></i> +91 9136168847</p>
                 <p><i class="fas fa-envelope"></i> enquiry@kgmittalcollege.edu.in</p>
-                <p><i class="fas fa-clock"></i> Office Hours: Mon-Fri, 9:00 AM - 5:00 PM</p>
             </div>
             <div class="footer-section">
-                <h3>Connect With Us</h3>
+                <h3>Follow Us</h3>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
                 </div>
-                <h3 style="margin-top: 20px;">Newsletter</h3>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Your Email Address">
-                    <button type="submit">Subscribe</button>
-                </form>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Smt. K.G. Mittal Institute of Arts & Commerce. All Rights Reserved.</p>
-            <p>Developed by Department of Information Technology & Computer Science</p>
+            <p>&copy; 2025 Smt. K.G. Mittal College. All rights reserved.</p>
+            <p>Developed by Department of IT & CS</p>
         </div>
     </footer>
 
-    <script>
-        // Tab functionality
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
-        
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const tabId = btn.getAttribute('data-tab');
-                
-                // Remove active class from all buttons and contents
-                tabBtns.forEach(btn => btn.classList.remove('active'));
-                tabContents.forEach(content => content.classList.remove('active'));
-                
-                // Add active class to clicked button and corresponding content
-                btn.classList.add('active');
-                document.getElementById(tabId).classList.add('active');
-            });
-        });
-        
-        // Animate stats counter
-        const statNumbers = document.querySelectorAll('.stat-number');
-        
-        function animateStats() {
-            statNumbers.forEach(stat => {
-                const target = +stat.getAttribute('data-target');
-                const duration = 2000; // Animation duration in ms
-                const step = target / (duration / 16); // 60fps
-                let count = 0;
-                
-                const counter = setInterval(() => {
-                    count += step;
-                    if (count >= target) {
-                        stat.textContent = target;
-                        if (stat.getAttribute('data-target') === "8.5") {
-                            stat.textContent = target + "+";
-                        } else if (stat.getAttribute('data-target') === "4.2") {
-                            stat.textContent = target + "+";
-                        } else {
-                            stat.textContent = target;
-                        }
-                        clearInterval(counter);
-                    } else {
-                        stat.textContent = Math.floor(count);
-                    }
-                }, 16);
-            });
-        }
-        
-        // Run animation when stats section is in view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateStats();
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        observer.observe(document.querySelector('.placement'));
-        
-        // Mobile menu toggle
-        const burger = document.querySelector('.burger');
-        const navLinks = document.querySelector('.nav-links');
-        
-        burger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            burger.classList.toggle('toggle');
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
